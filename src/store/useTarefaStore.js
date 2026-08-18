@@ -64,8 +64,7 @@ export const useTarefaStore = create((set, get) => ({
     })
   } catch (erro) {
     console.error('Erro ao adicionar tarefa:', erro)
-    set({ erro: 'Não foi possível adicionar a tarefa. ' +
-    'Verifique sua conexão e as credenciais no .env.'})
+    set({ erro: 'Não foi possível adicionar a tarefa. ' })
   }},
 
 }))
