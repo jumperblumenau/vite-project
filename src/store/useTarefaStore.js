@@ -78,4 +78,16 @@ export const useTarefaStore = create((set, get) => ({
       set({ erro: "Não foi possível alternar a tarefa. " });
     }
   },
+   removerTarefas: async (id) => {
+    try {
+      const referenciaDocumento = doc(db, "tarefas", id);
+      await deleteDoc(referenciaDocumento);
+    } catch (erro) {
+      console.error("Erro ao remover tarefa:", erro);
+      set({ erro: "Não foi possível remover a tarefa. " });
+    }
+  },
+  
+  limparErro: () => set({ erro: null }),
+
 }));
