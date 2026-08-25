@@ -24,8 +24,21 @@ function TodoForm({ todo }) {
         border: "1px solid #ccc",
         padding: "10px",
         borderRadius: "5px",
+        marginBottom: "20px",
+        width: "100%",
+        maxWidth: "400px",
+        marginLeft: "auto",
+        marginRight: "auto",
+        backgroundColor: "#f5f5f5",
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+        transition: "box-shadow 0.3s ease-in-out",
+        ":hover": {
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+        },
+        
       }}
     >
+        
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Add homeworks" />
         <button type="submit">Add</button>
