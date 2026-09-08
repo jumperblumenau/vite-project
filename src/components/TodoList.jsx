@@ -1,24 +1,26 @@
 import {useTarefaStore} from '../store/useTarefaStore'
-import { useEffect } from 'react'
+import ItemTarefas from './ItemTarefas'
 
-function TodoItem({ todo, setTodos }) {
-    const { id, text, completed } = todo;
+export default function TodoList() {
+    const tarefas = useTarefaStore((state) => state.tarefas)
+    const carregando = useTarefaStore((state) => state.carregando)
 
-    const handleDelete = () => {
-        setTodos(todos.filter((todo) => todo.id !== id));
-    };
+    if (carregando ) {
+        return <p className = "lista_tarefas__status">Carregando tarefas...</p>
+    }
 
-    const handleToggle = () => {
-        setTodos(todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)));
-    };
+    if (tarefas.length === 0) {
+        return <div className="lista_tarefas__vacia">
+            <p>Nenhuma tarefa encontrada.</p>
+            <span>adicione uma nova tarefa usando o formulário acima.</span>
+        </div>
+    }
 
-    return (
-        <li className="todo-item">
-            <input type="checkbox" checked={completed} onChange={handleToggle} />
-            <span className={completed ? "completed" : ""}>{text}</span>
-            <button onClick={handleDelete}>Delete</button>
-        </li>
-    );
+    return ( 
+        <ul className="lista_tarefas">
+            {tarefas.map((todo) => (
+                <ItemTarefas key={todo.id} todo={todo} />
+            ))}
+        </ul>
+    )
 }
-
-export default TodoItem
