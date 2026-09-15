@@ -33,9 +33,10 @@ return (
         type="submit"
         className="formulario_tarefa__botao"
         disabled= {!titulo.trim() || enviando}>
-            {enviando? 'Adicionando...' : 'Adicionar'}
+            {enviando ? 'Adicionando...' : 'Adicionar'}
             
         </button>
     </form>
+    
 )
 }
