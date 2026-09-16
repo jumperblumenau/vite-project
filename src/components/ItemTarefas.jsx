@@ -1,4 +1,4 @@
-import {useTarefaStore} from '../store/tarefaStore'
+import {useTarefaStore} from '../store/useTarefaStore'
 
 export default function ItemTarefas({ todo }) {
 
