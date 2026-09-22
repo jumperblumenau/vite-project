@@ -60,9 +60,10 @@
     border-radius: 0.5rem;
     background: #f1f5f9;
 }
-.item-tarefas__checkbox {
+.item-tarefas__checkbox{
     margin-right: 0.75rem;
 }
+
 .item-tarefas__titulo {
     flex: 1;
     font-size: 1rem;
@@ -98,7 +99,14 @@
     color: #fff;
 }
 
-
+.lista-tarefas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
 @media (max-width: 480px) {
 	.formulario-tarefa {
 		flex-direction: column;
