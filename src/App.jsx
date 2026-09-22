@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import ItemTarefas from './components/ItemTarefas'
-import TodoForm from './components/TodoForm'
-import { useTarefaStore } from './store/useTarefaStore';
+import  Cabecalho  from './components/Cabecalho'
+import  TodoForm  from './components/TodoForm'
+import {useTarefaStore}  from './store/useTarefaStore';
 import TodoList from './components/TodoList'
 
 export default function App() {
@@ -15,18 +15,29 @@ export default function App() {
     };
   }, [inscreverTarefas, cancelarInscricaoTarefas]);
 
-const concluidas = tarefas.filter((tarefa) => tarefa.concluida).length
+  const concluidas = tarefas.filter((tarefa) => tarefa.concluida).length
+  
   return (
     <div className="aplicativo">
       <div className="aplicativo__cartao">
-<Cabecalho total={tarefas.length} concluidas={concluidas} />
+        <Cabecalho total={tarefas.length} concluidas={concluidas} />
+
+        {erro && (
+          <div className='aplicativ__erro' role='alert'>
+            <span>{erro}</span>
+            <button type='button' onClick={limparErro} aria-label='Fechar aviso'>x</button>
+            </div>
+        )}
+
+        <TodoForm />
+        <TodoList />
 
 
       </div>
     </div>
-    
 
-      )
+
+  )
 }
 
 

@@ -55,7 +55,7 @@ export const useTarefaStore = create((set, get) => ({
   },
 
   adicionarTarefas: async (titulo) => {
-    const tyituloLimpo = titulo.trim();
+    const tituloLimpo = titulo.trim();
     if (!tituloLimpo) return;
 
     try {
@@ -78,7 +78,8 @@ export const useTarefaStore = create((set, get) => ({
       set({ erro: "Não foi possível alternar a tarefa. " });
     }
   },
-   removerTarefas: async (id) => {
+
+  removerTarefa: async (id) => {
     try {
       const referenciaDocumento = doc(db, "tarefas", id);
       await deleteDoc(referenciaDocumento);
