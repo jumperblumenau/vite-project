@@ -47,6 +47,11 @@
 	background: #1d4ed8;
 }
 
+.formulario_tarefa__botao:active:not(:disabled) {
+    background: #1e40af;
+    transform: scale(0.98);
+}
+
 .formulario_tarefa__botao:disabled {
 	opacity: 0.55;
 	cursor: not-allowed;
@@ -62,6 +67,7 @@
 }
 .item-tarefas__checkbox{
     margin-right: 0.75rem;
+    
 }
 
 .item-tarefas__titulo {
