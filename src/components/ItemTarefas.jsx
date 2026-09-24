@@ -13,6 +13,7 @@ export default function ItemTarefas({ todo }) {
             aria-label={todo.concluido ? 'Marcar como pendente' : 'Marcar como concluído'}>
                 {todo.concluido ? '✔️' : '🔲'}
             </button>
+           
             <span className="item-tarefas__titulo">{todo.titulo}</span>
             <button type="button"
             className="item-tarefas__remover"

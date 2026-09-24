@@ -7,11 +7,11 @@ export default function Cabecalho({total, concluidas}) {
                 <span className ="cabecalho__estadistica">
                     <strong> {total} </strong> no total
                 </span>
-                <span className="cabecalho__ponto" arial-hidden="true"> | </span>
+                <span className="cabecalho__ponto" aria-hidden="true"> | </span>
                 <span className="cabecalho__estadistica">
                     <strong> {pendentes} </strong> pendente{pendentes !== 1 ? 's' : ''}
                 </span>
-                <span className="cabecalho__ponto" arial-hidden="true"> | </span>
+                <span className="cabecalho__ponto" aria-hidden="true"> | </span>
                 <span className="cabecalho__estadistica">
                     <strong> {concluidas} </strong> concluída{concluidas !== 1 ? 's' : ''}
                 </span>

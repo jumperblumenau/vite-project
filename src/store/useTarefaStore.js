@@ -72,7 +72,7 @@ export const useTarefaStore = create((set, get) => ({
   alterarTarefa: async (id, concluido) => {
     try {
       const referenciaDocumento = doc(db, "tarefas", id);
-      await updateDoc(referenciaDocumento, { concluido: !concluido });
+      await updateDoc(referenciaDocumento, concluido);
     } catch (erro) {
       console.error("Erro ao alternar tarefa:", erro);
       set({ erro: "Não foi possível alternar a tarefa. " });

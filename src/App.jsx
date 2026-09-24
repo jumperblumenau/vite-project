@@ -15,7 +15,7 @@ export default function App() {
     };
   }, [inscreverTarefas, cancelarInscricaoTarefas]);
 
-  const concluidas = tarefas.filter((tarefa) => tarefa.concluida).length
+  const concluidas = tarefas.filter(tarefa => tarefa.concluido).length
   
   return (
     <div className="aplicativo">
