@@ -55,7 +55,7 @@ export const useTarefaStore = create((set, get) => ({
   },
 
   adicionarTarefas: async (titulo) => {
-    const tyituloLimpo = titulo.trim();
+    const tituloLimpo = titulo.trim();
     if (!tituloLimpo) return;
 
     try {
@@ -69,16 +69,17 @@ export const useTarefaStore = create((set, get) => ({
       set({ erro: "Não foi possível adicionar a tarefa. " });
     }
   },
-  alternarTarefas: async (id, concluido) => {
+  alterarTarefa: async (id, concluido) => {
     try {
       const referenciaDocumento = doc(db, "tarefas", id);
-      await updateDoc(referenciaDocumento, { concluido: !concluido });
+      await updateDoc(referenciaDocumento, concluido);
     } catch (erro) {
       console.error("Erro ao alternar tarefa:", erro);
       set({ erro: "Não foi possível alternar a tarefa. " });
     }
   },
-   removerTarefas: async (id) => {
+
+  removerTarefa: async (id) => {
     try {
       const referenciaDocumento = doc(db, "tarefas", id);
       await deleteDoc(referenciaDocumento);
